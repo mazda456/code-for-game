@@ -1,3 +1,60 @@
+<body>
+    <div class="ground">
+        <div id="circle" onclick="count()"></div>
+    </div>
+    <div class="details">
+        <h1>Tic Tac Toe</h1>
+        <h3>Click on a difficulty to start the game</h3>
+        <div class="level">
+            <button onclick="easy()">EASY</button>
+            <button onclick="medium()">MEDIUM</button>
+            <button onclick="hard()">HARD</button>
+        </div>
+
+        <html>
+            <body>
+              <div>
+                <h3> Enter your username and password </h3>
+            </div>
+          
+          
+          <form action="#">
+          <p>Username:
+          <input type="text" name="username"/>
+          </p> 
+          <p> Password:
+          <input type="password" name="password"/>
+          </p>
+          
+          <input type="submit" name="submit" value="Reset"/>
+          
+          </form>
+            </body>
+          </html>
+          <SCRIPT>
 
 
+            // Setting the level to Easy 
+            function easy() {
+                document.getElementById('circle')
+                    .style.animationDuration = '20s';
+                document.getElementById('circle')
+                    .className = 'crcl';
+            }
+          
+            // Setting the level to Medium
+            function medium() {
+                document.getElementById('circle')
+                    .style.animationDuration = '15s';
+                document.getElementById('circle')
+                    .className = 'crcl';
+            }
+          
+            // Setting the level to Hard 
+            function hard() {
+                document.getElementById('circle')
+                    .style.animationDuration = '12s';
+                document.getElementById('circle')
+                    .className = 'crcl';
+            }
 
