@@ -1,20 +1,21 @@
 <body>
     <div class="ground">
-        <div id="circle" onclick="count()"></div>
+        <div id="rectangle" onclick="count()"></div>
     </div>
     <div class="details">
         <h1>Tic Tac Toe</h1>
-        <h3>Click on a difficulty to start the game</h3>
+        <h3>Click on a difficulty to start the game</h3> 
         <div class="level">
             <button onclick="easy()">EASY</button>
             <button onclick="medium()">MEDIUM</button>
-            <button onclick="hard()">HARD</button>
-        </div>
+            <button onclick="hard()">HARD</button> 
+        </div> 
+        
 
         <html>
             <body>
               <div>
-                <h3> Enter your username</h3>
+                <h3> Enter your username</h3> 
             </div>
           
           
@@ -24,11 +25,11 @@
           </p> 
 
           
-          <input type="submit" name="submit" value="Reset"/>
+          <input type="submit" name="submit" value="Reset"/>  
           
           </form>
             </body>
-          </html>
+          </html> 
           <SCRIPT>
 
 
@@ -59,7 +60,7 @@
             if (document.all||document.getElementById){
 document.write('<style>.tictac{')
 document.write('width:100px;height:100px;')
-document.write('}</style>')
+document.write('}</style>')  // width, height and style of tictactoe
 }
 
 var sqr1
@@ -82,7 +83,7 @@ var sqr8T = 0
 var sqr9T = 0
 var moveCount = 0
 var turn = 0
-var mode = 1
+var mode = 1 //setting all squares as a var and value
 
 function vari()
 {
@@ -96,7 +97,7 @@ sqr7 = document.tic.sqr7.value
 sqr8 = document.tic.sqr8.value
 sqr9 = document.tic.sqr9.value
 }
-function check()
+function check() // checking the function of each square
 
 {
 if(sqr1 == " X " && sqr2 == " X " && sqr3 == " X ")
@@ -142,13 +143,13 @@ reset()
 else if(sqr3 == " X " && sqr5 == " X " && sqr7 == " X ")
 {
 alert("You Win!")
-reset()
+reset() // for 3 squares in a row, if placed there alert will pop up saying you win
 }
 else
 {
 winCheck()
 check2()
-drawCheck()  
+drawCheck()  // checks win and draw check for if someone wins or draws
 } 
 }
 
@@ -199,10 +200,10 @@ reset()
 else if(sqr3 == " O " && sqr5 == " O " && sqr7 == " O ")
 {
 alert("You Lose!")
-reset()
+reset() // for 3 squares in a row, if placed there alert will pop up saying you lose
 }
 }
-function player1Check()
+function player1Check() // to check if player1 wins
 {
 if(sqr1 == " X " && sqr2 == " X " && sqr3 == " X ")
 {
@@ -246,12 +247,12 @@ reset()
 }
 else if(sqr3 == " X " && sqr5 == " X " && sqr7 == " X ")
 {
-alert("Player 1 wins!")
+alert("Player 1 wins!") // if player1 has the 3 squares in a row, alert shows that player1 has won
 reset()
 }
 else
 {
-player2Check()
+player2Check() // checks if player2 has won
 drawCheck()  
 } 
 }
@@ -301,23 +302,23 @@ reset()
 }
 else if(sqr3 == " O " && sqr5 == " O " && sqr7 == " O ")
 {
-alert("Player 2 wins!")
+alert("Player 2 wins!") // if player 2 has 3 squares in a row, alert shows that player2 has won
 reset()
 }
 }
 
-function drawCheck()
+function drawCheck() // checks if a draw
 {
 vari()
 moveCount = sqr1T + sqr2T + sqr3T + sqr4T + sqr5T + sqr6T + sqr7T + sqr8T + sqr9T 
-if(moveCount == 9)
+if(moveCount == 9) // caluclates move count for the squares
 {
 reset()
-alert("Draw") 
+alert("Draw") // function for draw
 }
 }
 
-function winCheck()
+function winCheck() // checks squares to see if 3 in a row
 {
 check2()
 if(sqr1 == " O " && sqr2 == " O " && sqr3T == 0 && turn == 1)
@@ -476,7 +477,7 @@ computer()
 }
 check2()
 }
-function computer()
+function computer() // tells player 2 (aka computer) where to place their squares
 {
 check2()
 if(sqr1 == " X " && sqr2 == " X " && sqr3T == 0 && turn == 1)
@@ -636,7 +637,7 @@ AI()
 check2()
 }
 
-function AI()
+function AI() // tells AI where to go
 {
 vari()
 if(document.tic.sqr5.value == "     " && turn == 1)
@@ -723,8 +724,10 @@ moveCount = 0
 
 function resetter()
 {
-reset()
+reset() // the function for reset
 }
+
+ // end of script code
 </SCRIPT>
 
 
@@ -738,7 +741,7 @@ reset()
     <INPUT TYPE="button" NAME="sqr7" class="tictac" value="     " onClick="if(document.tic.sqr7.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr7.value = ' X '; sqr7T = 1; turn = 1; vari(); check();} else if(document.tic.sqr7.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr7.value = ' X '; sqr7T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr7.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr7.value = ' O '; sqr7T = 1; turn = 1; vari(); player1Check()} drawCheck()">
     <INPUT TYPE="button" NAME="sqr8" class="tictac" value="     " onClick="if(document.tic.sqr8.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr8.value = ' X '; sqr8T = 1; turn = 1; vari(); check();} else if(document.tic.sqr8.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr8.value = ' X '; sqr8T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr8.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr8.value = ' O '; sqr8T = 1; turn = 1; vari(); player1Check()} drawCheck()">
     <INPUT TYPE="button" NAME="sqr9" class="tictac" value="     " onClick="if(document.tic.sqr9.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr9.value = ' X '; sqr9T = 1; turn = 1; vari(); check();} else if(document.tic.sqr9.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr9.value = ' X '; sqr9T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr9.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr9.value = ' O '; sqr9T = 1; turn = 1; vari(); player1Check()} drawCheck()">
-    </form>
+    </form> 
 
 </div>
 
@@ -795,7 +798,7 @@ reset()
     margin: 0;
     font-family: 'Itim', cursive;
 
-    background-color: burlywood;
+    background: burlywood;
 }
 
 body {
@@ -822,5 +825,4 @@ input {
         
 
 
-    </style>
-</style>
+    </style> 
