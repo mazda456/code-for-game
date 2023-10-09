@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(117, 117, 117);
+        display: grid;
+        width: 100%;
+        margin: auto;
+        grid-template-columns: 2fr 1fr 4fr 1fr 2fr;
+        grid-template-rows: 1fr;
+        
+}
+
+canvas {
+    background-color: rgb(139, 139, 139);
+    
+}
+
+.sitelayout {
+    grid-row: 1;
+    grid-column: 3;
+    text-align: center;
+    border: 0.2em;
+    border-color: azure;
+    border-style: solid;
+    position: relative;
+    top: 120px;
+    
+}
+
+
+#character {
+    width: 50px;
+    height: 50px;
+    background-color: red; /* You can replace this with an image */
+    position: absolute;
+}
+
+
+/* Existing CSS styles for character and boundary go here */
+
+/* Existing CSS styles for character and boundary go here */
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+#popup {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fade-in 0.5s ease-in-out; /* Add a fade-in animation */
+}
+
+#closeButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#closeButton:hover {
+    background-color: #d32f2f;
+}
+
+/* Define the cool font */
+.cool-font {
+    font-family: 'Exo 2', sans-serif;
+}
+
+
+
