@@ -1,5 +1,10 @@
+// Countdown timer
+let countdownValue = 60; // Set the initial countdown value in seconds
+const countdownElement = document.getElementById("countdown");
+
 const character = document.getElementById("character");
 const moveAmount = 10;
+
 
 // Function to move the character
 function moveCharacter(direction) {
@@ -18,8 +23,22 @@ function moveCharacter(direction) {
             break;
     }
     character.style.left = characterX + "px";
-    character.style.top = characterY + "px";
+    character.style.top = characterY + "px"; 
 }
+
+function updateCountdown() {
+    countdownElement.textContent = countdownValue;
+    if (countdownValue === 0) {
+        // Hide the overlay when the countdown reaches 0
+        overlay.style.display = "none";
+    } else {
+        countdownValue--;
+        setTimeout(updateCountdown, 1000); // Update the countdown every 1 second (1000 milliseconds)
+    }
+}
+
+// Start the countdown timer
+updateCountdown();
 
 // Function to set the initial position of the character
 function setInitialPosition(x, y) {
@@ -60,3 +79,4 @@ window.addEventListener("load", () => {
         overlay.style.display = "none";
     });
 });
+
